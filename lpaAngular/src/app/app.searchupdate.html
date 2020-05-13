@@ -1,0 +1,203 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+   
+    
+
+
+<style>
+    table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: darkgrey;
+    }
+
+td {
+background-color: #55608f;
+}
+td {
+position: relative;
+}
+td:hover:before {
+content: "";
+position: absolute;
+left: 0;
+right: 0;
+top: -9999px;
+bottom: -9999px;
+background-color: rgba(255, 255, 255, 0.2);
+z-index: -1;
+}
+tr:hover {
+background-color: rgba(255, 255, 255, 0.3);
+}
+h3{
+    color:navy;
+    padding-top:300px;
+    text-align: center; 
+    font-size:25px;
+
+}
+
+
+#b1{
+    float:center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+position: absolute;
+top: 55%;
+left: 50%;
+-webkit-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+border-radius: 20px;
+background-color: aquamarine;
+}
+table {
+width: 475px;
+overflow: hidden;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+thead{
+    text-align: right;
+    color: #fff;
+
+}
+td {
+padding: 15px;
+background-color: rgba(0, 0, 0, 0.2);
+color: #fff;
+}
+
+
+    </style>
+    <a href="css/app.style.css"></a>
+</head>
+
+<body>
+    <form #searchDataForm=ngForm (ngSubmit)="searchData(searchDataForm)">
+            <h3>Search Loan Programs</h3>    
+            <div class="container">
+    
+            <table cellpadding="10" border="1" align="center">
+        <tr>
+            <td>Program Name</td>
+        <td>
+                    <input required id="pname" name="pName" type="String" #idcontrol="ngModel"  [(ngModel)]='pname' />
+                                    <span *ngIf="idcontrol.invalid && idcontrol.touched" ></span>
+                    </td>
+
+        </tr>
+        <tr>
+            <td id="b1">
+                    <input type="submit" value="search program" [disabled]="searchDataForm.invalid"/>
+            </td></tr>
+    </table>
+</div>
+</form>
+<!--update -->
+<form #updateDataForm=ngForm (ngSubmit)="updateemployee(updateDataForm)">
+        <!-- <h3 align="center">Update the loan program</h3>     -->
+        <div class="container">
+    <table *ngIf="msg" border="1" cellpadding="10" align="center">
+        <thead>Update the loan program</thead>
+        <tr>
+          
+            <td>Program Name</td>
+            <td>
+                        <input required id="pname" name="pName" type="String" #idcontrol="ngModel"  [(ngModel)]='model.programName' />
+                                        <span *ngIf="idcontrol.invalid && idcontrol.touched" ></span>
+                        </td>
+    
+
+        </tr>
+
+        <tr>
+            <td>program Description</td>
+            <td>
+               
+                <input required id="pdes" name="pDes" type="String" #idcontrol="ngModel"  [(ngModel)]='model.programDescription' />
+                                        <span *ngIf="idcontrol.invalid && idcontrol.touched" ></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>loan Type</td>
+            <td>
+            
+                <input required id="ltype" name="lType" type="String" #idcontrol="ngModel"  [(ngModel)]='model.loanType' />
+                                        <span *ngIf="idcontrol.invalid && idcontrol.touched" ></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>program Duration</td>
+            <td>
+                
+                <input required id="pdur" name="pDuration" type="String" #idcontrol="ngModel"  [(ngModel)]='model.programDuration' />
+                <span *ngIf="idcontrol.invalid && idcontrol.touched" ></span>
+
+            </td>
+        </tr>
+        <tr>
+            <td>minimum Amount</td>
+            <td>
+               
+                <input required id="minamt" name="minAmount" type="String" #idcontrol="ngModel"  [(ngModel)]='model.minimumAmount' />
+                <span *ngIf="idcontrol.invalid && idcontrol.touched" ></span>
+
+            </td>
+        </tr>
+        <tr>
+            <td>maximum Amount</td>
+            <td>
+               
+                <input required id="maxamt" name="maxAmount" type="String" #idcontrol="ngModel"  [(ngModel)]='model.maximumAmount' />
+                <span *ngIf="idcontrol.invalid && idcontrol.touched" ></span>
+
+            </td>
+        </tr>
+        <tr>
+            <td>rate Of Interest</td>
+            <td>
+                <input required id="rateofint" name="rateOfInterest" type="String" #idcontrol="ngModel"  [(ngModel)]='model.rateOfInterest' />
+                <span *ngIf="idcontrol.invalid && idcontrol.touched" ></span>
+            </td>
+        </tr>
+        <tr>
+            <td>proofs Required</td>
+            <td>
+
+                <input required id="proofs" name="proofsRequired" type="String" #idcontrol="ngModel"  [(ngModel)]='model.proofsRequired' />
+                <span *ngIf="idcontrol.invalid && idcontrol.touched" ></span>
+           
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <!-- <button (click)="updateemployee()">Update employee</button> -->
+                <input type="submit" value="Update Loan Program" [disabled]="updateDataForm.invalid"/>
+            </td>
+        </tr>
+
+    </table>
+</div>
+</form>
+
+</body>
+
+</html>

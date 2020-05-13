@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <style>
+
+        /* .header {
+            padding: 5px;
+            text-align: center;
+
+        }
+
+        .header h1 {
+            font-size: 50px;
+        }
+
+        /* h1 {
+            color: slateblue;
+            background-color: coral;
+        } */
+
+        /* .topnav {
+            overflow: hidden;
+            background-color: teal;
+        } */
+
+        /* Style the topnav links */
+
+        /* .topnav a {
+            float: right;
+            display: flex;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 10px 16px;
+            text-decoration: none;
+            border-radius: 20px;
+
+        } */
+
+        /* Change color on hover */
+
+        /* .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+
+        } */
+     
+
+
+.topnav a{
+float:right;
+padding: 10px 10px;
+font-size: 20px;
+color:purple;
+/* background-color:turquoise; */
+
+}
+h1 {
+            color:blueviolet;
+            text-align: center;
+}
+            /* background-color: coral;
+ */
+
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <!-- <div class="header"> -->
+        <h1>Loan Application management system</h1>
+<!-- </div> -->
+    <div class="topnav">
+
+        <a routerLink="getdata">Show ALL</a>
+        <a routerLink="postdata">ADD Loan Program</a>
+        <a routerLink="search">Search & Update Loan Program</a>
+        <router-outlet></router-outlet>
+
+
+        <router-outlet></router-outlet>
+    </div>
+    <img  src='2.jpg' style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
+</body>
+
+</html>

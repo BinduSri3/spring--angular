@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<a href="css/app.style.css"></a>
+<style>
+        table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        background-color:khaki;
+        }
+    
+    td {
+    background-color: #55608f;
+    }
+    td {
+    position: relative;
+    }
+    td:hover:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -9999px;
+    bottom: -9999px;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+    }
+    tr:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    }
+    h3{
+        color: white;
+    }
+    
+    
+    .container {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    }
+    table {
+    width: 475px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    th,
+    td {
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    }
+    
+    
+        </style>
+</head>
+<body>
+        <form #addDataForm=ngForm (ngSubmit)="addData(addDataForm)">
+              <h3 align="center">ADD LOAN PROGRAMS</h3>
+              <div class="container">
+
+<table cellpadding="10" border="1" align="center">
+
+        <tr>
+            <td>program Name</td>
+            <td>
+                <input required id="pname" name="programName" type="text" #namecontrol="ngModel" [(ngModel)]='model.programName' />
+                <span *ngIf="namecontrol.invalid && namecontrol.touched" ></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>program Description</td>
+            <td>
+                <input required id="pDes" name="programDescription" type="text" #namecontrol="ngModel" [(ngModel)]='model.programDescription' />
+                <span *ngIf="namecontrol.invalid && namecontrol.touched" ></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>loan Type</td>
+            <td>
+                <input required id="ltype" name="loanType" type="text" #namecontrol="ngModel" [(ngModel)]='model.loanType' />
+                <span *ngIf="namecontrol.invalid && namecontrol.touched" ></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>program Duration</td>
+            <td>
+              
+                <input required id="pdur" name="programDuration" type="text" #namecontrol="ngModel" [(ngModel)]='model.programDuration' />
+                <span *ngIf="namecontrol.invalid && namecontrol.touched" ></span>
+            </td>
+        </tr>
+        <tr>
+            <td>minimum Amount</td>
+            <td>
+                <input required id="minamt" name="minimumAmount" type="text" #namecontrol="ngModel" [(ngModel)]='model.minimumAmount' />
+                <span *ngIf="namecontrol.invalid && namecontrol.touched" ></span>
+            </td>
+        </tr>
+        <tr>
+            <td>maximum Amount</td>
+            <td>
+              
+                <input required id="maxamt" name="maximumAmount" type="text" #namecontrol="ngModel" [(ngModel)]='model.maximumAmount' />
+                <span *ngIf="namecontrol.invalid && namecontrol.touched" ></span>
+            </td>
+        </tr>
+        <tr>
+            <td>rate Of Interest</td>
+            <td>
+               
+                <input required id="rate" name="rateOfInterest" type="text" #namecontrol="ngModel" [(ngModel)]='model.rateOfInterest' />
+                <span *ngIf="namecontrol.invalid && namecontrol.touched" ></span>
+            </td>
+        </tr>
+        <tr>
+            <td>proofs Required</td>
+            <td>
+                <input required id="proofs" name="proofsRequired" type="text" #namecontrol="ngModel" [(ngModel)]='model.proofsRequired' />
+                <span *ngIf="namecontrol.invalid && namecontrol.touched" ></span>
+            </td>
+        </tr>
+        
+<tr>
+        <input type="submit" value="Add Loans" [disabled]="addDataForm.invalid"/></tr>
+
+</table>
+</div>
+</form>
+</body>
+</html>

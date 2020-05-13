@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<a href="css/app.style.css"></a>
+
+<style>
+        table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        background-color: darkgrey;
+        }
+    
+    td {
+    background-color: #55608f;
+    }
+    td {
+    position: relative;
+    }
+    td:hover:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -9999px;
+    bottom: -9999px;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+    }
+    tr:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    }
+    h3{
+        color: white;
+    }
+    
+    
+    .container {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    }
+    table {
+    width: 475px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    th{
+        color: #fff;
+    }
+    td {
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    }
+    
+    
+        </style>
+</head>
+<body>
+
+<table border="1">
+<tr>
+ 
+<th>program Name</th>
+<th>program Description</th>
+<th>loan Type</th>
+<th>program Duration</th>
+<th>minimum Amount</th>
+<th>maximum Amount</th>
+<th>rate Of Interest</th>
+<th>proofs Required</th>
+<th>ACTION</th>
+</tr>
+<tr>
+
+<tr *ngFor="let emp of employees">
+ 
+<td>{{emp.programName}}</td>
+<td>{{emp.programDescription}}</td>
+<td>{{emp.loanType}}</td>
+<td>{{emp.programDuration}}</td>
+<td>{{emp.minimumAmount}}</td>
+<td>{{emp.maximumAmount}}</td>
+<td>{{emp.rateOfInterest}}</td>
+<td>{{emp.proofsRequired}}</td>
+<td><button (click)='delete(emp.programName)'>DELETE</button> </td>
+</tr>
+<tr *ngIf="!emp">
+<td colspan="4">{{statusmessage}}</td>
+</tr>
+<tr *ngIf="emp && emp.length==0">
+<td>No employee to display</td>>
+</tr>
+</table>
+
+
+
+
+</body>
+</html>

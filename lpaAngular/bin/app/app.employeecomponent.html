@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<table border="1">
+<tr>
+<th>Employee ID</th>
+<th>Employee age</th>
+<th>Employee Gender</th>
+<th>Employee Department</th>
+<th>ACTION</th>
+</tr>
+<tr>
+
+<tr *ngFor="let emp of employees">
+<td>{{emp.empId}}</td>
+<td>{{emp.empName}}</td>
+<td>{{emp.empSalary}}</td>
+<td>{{emp.empDepartment}}</td>
+<td><button (click)='delete(emp.empId)'>DELETE</button> </td>
+</tr>
+<tr *ngIf="!emp">
+<td colspan="4">{{statusmessage}}</td>
+</tr>
+<tr *ngIf="emp && emp.length==0">
+<td>No employee to display</td>>
+</tr>
+</table>
+
+
+
+
+</body>
+</html>

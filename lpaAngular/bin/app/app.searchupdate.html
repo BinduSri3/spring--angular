@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<table  border="1">
+<tr>
+<td>ID</td>
+<td><input [(ngModel)]='eid' /></td>
+</tr>
+<tr>
+<td><button (click)="searchData()">Search</button>
+</tr>
+</table>
+
+<table *ngIf="msg" border="1" >
+<tr>
+<td>ID</td>
+<td><input [(ngModel)]='model.empId' /></td>
+</tr>
+
+<tr>
+<td>Name</td>
+<td><input [(ngModel)]='model.empName' /></td>
+</tr>
+<tr>
+<td>Salary</td>
+<td><input [(ngModel)]='model.empSalary' /></td>
+</tr>
+
+<tr>
+<td>Department</td>
+<td><input [(ngModel)]='model.empDepartment' /></td>
+</tr>
+<tr>
+<td><button (click)="updateemployee()">Update Employee</button></td>
+</tr>
+
+</table>
+
+
+</body>
+</html>
